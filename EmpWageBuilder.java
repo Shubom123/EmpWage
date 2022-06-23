@@ -5,7 +5,7 @@ public static final int empWagePerHour=20;
 public static final int NUM_OF_WORKING_DAYS=20;
 public static final int MAX_HOURS_IN_MONTH=100;
 
-public static void EmployeeWage()
+public static void EmployeeWage(String company, int empWagePerHour)
 {
 int empWage=0;
 int empHours=0;
@@ -33,19 +33,19 @@ System.out.println("Employee is absent");
 empHours=0;
 }
 totalEmpHours = totalEmpHours + empHours;
-System.out.println(" Emp Hrs: " + empHours);
 empWage = empWagePerHour * empHours;
-System.out.println("Wage of a day is: "+ empWage);
+System.out.println("Daily Wage of a worker at "+ company + "is" + empWage + " in " + empHours);
 }
 totalEmpWage = totalEmpHours * empWagePerHour;
-System.out.println("Wage of whole month is: "+ totalEmpWage);
-System.out.println("Number of hour worker in whole month is: "+ totalEmpHours);
-System.out.println("Number of days worker in whole month is: "+ totalWorkDays);
+System.out.println("Monthly wage of a worker at "+ company + " is " + totalEmpWage + " in " + totalEmpHours);
 
 }
 
 public static void main(String args[])
 {
- EmployeeWage();
+ EmployeeWage("Nokia", 40);
+ EmployeeWage("Bridgelabzs", 35);
+ EmployeeWage("GTA", 45);
+
 }
 }
