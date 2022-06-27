@@ -1,7 +1,9 @@
 interface IEmpWageBuilder {
-    public void addCompany(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs);
+     public void addCompany(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs);
     public void companyWage();
     public  void printotalwage();
+    public static int getTotalWage(String companyName){
+        return 0;
 }
 public class CompanyEmpWage {
     // declaring instance variables
@@ -12,7 +14,7 @@ public class CompanyEmpWage {
     // instance variable
     int totalEmpWage;
     //Constructor
-    public  CompanyEmpWage(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs) {
+    public  companyEmpWage(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs) {
         COMPANY_NAME = companyName;
         WAGE_PER_HR = wagePerHr;
         MAX_WORKING_DAYS = maxWorkingDays;
