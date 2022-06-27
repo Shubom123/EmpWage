@@ -1,6 +1,7 @@
 interface IEmpWageBuilder {
     public void addCompany(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs);
     public void companyWage();
+    public  void printotalwage();
 }
 public class CompanyEmpWage {
     // declaring instance variables
