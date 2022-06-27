@@ -11,7 +11,7 @@ public class CompanyEmpWage {
     // instance variable
     int totalEmpWage;
     //Constructor
-    public  companyEmpWage(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs) {
+    public  CompanyEmpWage(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs) {
         COMPANY_NAME = companyName;
         WAGE_PER_HR = wagePerHr;
         MAX_WORKING_DAYS = maxWorkingDays;

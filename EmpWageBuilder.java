@@ -1,25 +1,23 @@
-import java.util.Arrays;
-import java.util.Scanner;
 import java.util.Random;
+import java.util.ArrayList; //importing ArrayList class
 public class EmpWageBuilder  implements IEmpWageBuilder {
     // instance variables
     int noOfCompanies, index;
-    companyEmpWage[] companies; //declaring array
+    ArrayList<companyEmpWage> companies; //ArrayList declaration
+  // contructor for EmpWageBuilder  class
+    public EmpWageBuilder(){
+      companies=new ArrayList<>();
+  }
 
-    //Constructor for the class EmpWageBuilder
-    public EmpWageBuilder(int noOfCompanies) {
-        super();
-        this.noOfCompanies = noOfCompanies;
-        companies = new companyEmpWage[noOfCompanies];
-        index = 0;
-    }
+
     //Assigning to the array
     public void addCompany(String companyName, int wagePerHr, int maxWorkingDays, int maxWorkingHrs) {
-        companies[index++] = new companyEmpWage(companyName, wagePerHr, maxWorkingDays, maxWorkingHrs);
+        companyEmpWage company = new companyEmpWage(companyName, wagePerHr, maxWorkingDays, maxWorkingHrs);
+        companies.add(company);
     }
-    //Computation of company wage
+    //print company wage
     int companyWage(companyEmpWage companyEmpWage) {
-        System.out.println("* Computation of total wage of " + companyEmpWage.COMPANY_NAME + " employee:");
+        System.out.println("* Total wage of " + companyEmpWage.COMPANY_NAME + " employee:");
         int workingHrs, totalWage = 0;
         for (int day = 1, totalWorkingHrs = 0; day <= companyEmpWage.MAX_WORKING_DAYS
                 && totalWorkingHrs <= companyEmpWage.MAX_WORKING_HRS; day++, totalWorkingHrs += workingHrs) {
@@ -57,7 +55,7 @@ public class EmpWageBuilder  implements IEmpWageBuilder {
     public static void main(String args[]) {
         //Welcome message
         System.out.println("Welcome to Employee Wage Builder. \n");
-        EmpWageBuilder emp = new EmpWageBuilder(3); //creating an object and declaring number of companies = 3
+        EmpWageBuilder emp = new EmpWageBuilder(); //creating an object and declaring number of companies = 3
         emp.addCompany("Bridgeabz", 20, 20, 100);
         emp.addCompany("TATA", 34, 23, 130);
         emp.addCompany("BAJAJ", 10, 15, 99);
